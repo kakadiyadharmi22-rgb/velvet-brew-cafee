@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Velvet Brew Cafe — handcrafted coffee, artisan desserts and warm moments.">
+  <title>Velvet Brew Café | Coffee, Crafted Slowly</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="announcement">HANDCRAFTED COFFEE · FRESHLY BAKED · MADE WITH LOVE</div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" data-page="home" aria-label="Velvet Brew Cafe home">
+      <span class="brand-mark">VB</span>
+      <span class="brand-copy"><strong>VELVET BREW</strong><small>CAFÉ & ROASTERY</small></span>
+    </a>
+    <button class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active" data-page="home">Home</a>
+      <a href="#menu" class="nav-link" data-page="menu">Our Menu</a>
+      <a href="#about" class="nav-link" data-page="about">Our Story</a>
+      <a href="#profile" class="nav-link" data-page="profile">My Profile</a>
+    </nav>
+    <button class="cart-button" id="openCartButton" aria-label="Open shopping cart">
+      <span class="cart-icon">♧</span><span>Bag</span><span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="page active" id="page-home" data-view="home">
+      <section class="hero">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> YOUR DAILY DOSE OF COMFORT</p>
+          <h1>Life happens.<br><em>Coffee helps.</em></h1>
+          <p class="hero-description">Slow down, sip something beautiful, and make room for the little moments that matter.</p>
+          <div class="hero-actions">
+            <button class="button button-gold" data-go="menu">Explore the menu <span>↗</span></button>
+            <button class="button button-outline" data-go="about">Our story</button>
+          </div>
+          <div class="hero-note"><span class="stars">★★★★★</span><span>Made fresh. Served warm. Always welcoming.</span></div>
+        </div>
+        <div class="hero-side-label">EST. 2024 · BREWED WITH SOUL</div>
+        <div class="hero-bottom"><span>01 / 03</span><span class="hero-line"></span><span>GOOD COFFEE, BETTER COMPANY</span></div>
+      </section>
+
+      <section class="intro-section section-wrap">
+        <div class="intro-image-wrap">
+          <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85" alt="Warm, inviting cafe interior" class="intro-image">
+          <div class="image-stamp"><span>GOOD</span><strong>VIBES</strong><span>ONLY</span></div>
+        </div>
+        <div class="intro-copy">
+          <p class="eyebrow">A LITTLE PLACE TO UNWIND</p>
+          <h2>More than coffee.<br><em>A feeling.</em></h2>
+          <p>We believe a great café is made of small things: the first aroma of freshly ground beans, a pastry still warm from the oven, and a seat where you can stay a little longer.</p>
+          <p>At Velvet Brew, every cup is prepared with care and every visit is an invitation to pause.</p>
+          <button class="text-link" data-go="about">Get to know us <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="featured-section">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <div><p class="eyebrow">A FEW HOUSE FAVOURITES</p><h2>Made for your <em>mood.</em></h2></div>
+            <button class="text-link" data-go="menu">View full menu <span>→</span></button>
+          </div>
+          <div class="featured-grid" id="featuredGrid"></div>
+        </div>
+      </section>
+
+      <section class="quote-band">
+        <span class="quote-mark">“</span>
+        <p>There is something magical about a cup of coffee shared with a little time.</p>
+        <span class="quote-credit">THE VELVET BREW PHILOSOPHY</span>
+      </section>
+      <section class="visit-cta section-wrap">
+        <div><p class="eyebrow">YOUR TABLE IS WAITING</p><h2>Come as you are.<br><em>Leave a little happier.</em></h2></div>
+        <button class="button button-gold" data-go="menu">Find your favourite <span>↗</span></button>
+      </section>
+    </section>
+
+    <section class="page" id="page-menu" data-view="menu">
+      <section class="page-banner menu-banner">
+        <div class="page-banner-inner"><p class="eyebrow">SOMETHING DELICIOUS IS BREWING</p><h1>The <em>menu.</em></h1><p>Comfort in a cup. A little sweetness on the side.</p></div>
+      </section>
+      <section class="section-wrap menu-section">
+        <div class="menu-toolbar">
+          <div class="menu-categories" id="categoryFilters" aria-label="Menu categories"></div>
+          <div class="menu-tools">
+            <label class="search-box"><span>⌕</span><input type="search" id="menuSearch" placeholder="Search the menu..." aria-label="Search menu"></label>
+            <select id="menuSort" aria-label="Sort menu"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select>
+          </div>
+        </div>
+        <div class="menu-result-line"><span id="menuResultCount">Showing menu favourites</span><span>PREPARED FRESH DAILY</span></div>
+        <div class="menu-grid" id="menuGrid"></div>
+        <div class="pagination" id="pagination" aria-label="Menu pages"></div>
+      </section>
+    </section>
+
+    <section class="page" id="page-about" data-view="about">
+      <section class="page-banner about-banner">
+        <div class="page-banner-inner"><p class="eyebrow">OUR STORY, IN EVERY SIP</p><h1>Rooted in care.<br><em>Roasted with love.</em></h1><p>A neighbourhood café with a soft spot for good coffee and good people.</p></div>
+      </section>
+      <section class="section-wrap story-section">
+        <div class="story-photo"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=85" alt="Barista preparing a fresh coffee"><span class="photo-caption">A GOOD CUP TAKES CARE</span></div>
+        <div class="story-copy"><p class="eyebrow">THE HEART OF VELVET BREW</p><h2>Small rituals.<br><em>Beautifully done.</em></h2><p>Velvet Brew began with a simple idea: create a welcoming corner where coffee is never rushed and people always feel at home.</p><p>We choose flavourful beans, prepare every drink to order, and pair our coffee with comforting bakes and café classics. Whether you are meeting a friend, reading alone, or taking a break between busy days, there is a place for you here.</p><div class="values-list"><div><span>01</span><div><strong>Thoughtful ingredients</strong><p>Fresh flavours and quality ingredients, chosen with care.</p></div></div><div><span>02</span><div><strong>Made by hand</strong><p>Every cup gets the time and attention it deserves.</p></div></div><div><span>03</span><div><strong>Room for everyone</strong><p>A warm, relaxed space for every kind of day.</p></div></div></div></div>
+      </section>
+      <section class="about-stats"><div><strong>16+</strong><span>CAFÉ FAVOURITES</span></div><div><strong>100%</strong><span>MADE WITH CARE</span></div><div><strong>1</strong><span>HAPPY CUP AT A TIME</span></div></section>
+      <section class="visit-cta section-wrap"><div><p class="eyebrow">LET'S MAKE A MOMENT</p><h2>Your next favourite<br><em>is on the menu.</em></h2></div><button class="button button-gold" data-go="menu">Explore the menu <span>↗</span></button></section>
+    </section>
+
+    <section class="page" id="page-profile" data-view="profile">
+      <section class="page-banner profile-banner"><div class="page-banner-inner"><p class="eyebrow">YOUR LITTLE CORNER</p><h1>Your <em>profile.</em></h1><p>Keep your details and revisit your café favourites.</p></div></section>
+      <section class="section-wrap profile-layout">
+        <div class="profile-card">
+          <div class="profile-avatar" id="profileAvatar">V</div>
+          <p class="eyebrow">VELVET BREW MEMBER</p>
+          <h2 id="profileDisplayName">Coffee lover</h2>
+          <p class="profile-subtitle">Your café details are saved on this device.</p>
+          <div class="profile-stat"><span>Website visits on this browser</span><strong id="visitCount">1</strong></div>
+          <div class="profile-stat"><span>Items in your bag</span><strong id="profileCartCount">0</strong></div>
+        </div>
+        <form class="profile-form" id="profileForm">
+          <p class="eyebrow">YOUR DETAILS</p><h2>Make yourself <em>at home.</em></h2>
+          <label for="profileName">Your name</label><input id="profileName" name="name" type="text" placeholder="e.g. Dharmi" maxlength="60">
+          <label for="profileEmail">Email address</label><input id="profileEmail" name="email" type="email" placeholder="you@example.com" maxlength="100">
+          <label for="profileNote">Your usual order or coffee note</label><textarea id="profileNote" name="note" rows="4" placeholder="I love iced coffee and chocolate cake..." maxlength="300"></textarea>
+          <button class="button button-gold" type="submit">Save my profile <span>→</span></button>
+          <p class="form-message" id="profileMessage" aria-live="polite"></p>
+          <p class="privacy-note">Demo note: your profile is stored only in this browser using local storage. It is not sent to a server.</p>
+        </form>
+      </section>
+      <section class="section-wrap order-history-section"><div class="section-heading"><div><p class="eyebrow">YOUR RECENT ACTIVITY</p><h2>Order <em>history.</em></h2></div></div><div id="orderHistory" class="order-history"></div></section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand brand-footer" href="#home" data-page="home"><span class="brand-mark">VB</span><span class="brand-copy"><strong>VELVET BREW</strong><small>CAFÉ & ROASTERY</small></span></a><p>Good coffee. Warm company.<br>A little pause in your day.</p></div>
+      <div><h3>EXPLORE</h3><a href="#home" data-page="home">Home</a><a href="#menu" data-page="menu">Our menu</a><a href="#about" data-page="about">Our story</a></div>
+      <div><h3>VISIT US</h3><p>Made fresh, served with care.</p><p>Mon – Sun · 9:00 AM – 9:00 PM</p><p class="footer-note">Demo website · Add your real café address here</p></div>
+      <div><h3>STAY IN THE LOOP</h3><p>Good things are best shared.</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Your email address" required><button type="submit" aria-label="Join newsletter">→</button></form><p class="form-message" id="newsletterMessage" aria-live="polite"></p></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="currentYear"></span> VELVET BREW CAFÉ. MADE WITH CARE.</span><button id="backToTop">BACK TO TOP ↑</button></div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-heading"><div><p class="eyebrow">YOUR LITTLE TREATS</p><h2>Your <em>bag.</em></h2></div><button class="icon-button" id="closeCartButton" aria-label="Close bag">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>♧</span><h3>Your bag is taking a break.</h3><p>Add something delicious from the menu.</p><button class="text-link" data-go="menu">Browse the menu →</button></div>
+    <div class="cart-summary" id="cartSummary"><div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div><p>Taxes and delivery, if applicable, are not included in this demo.</p><button class="button button-gold checkout-button" id="checkoutButton">Place demo order <span>→</span></button></div>
+  </aside>
+
+  <div class="dish-modal" id="dishModal" role="dialog" aria-modal="true" aria-labelledby="modalDishName" aria-hidden="true">
+    <button class="icon-button modal-close" id="closeDishModal" aria-label="Close dish details">×</button>
+    <div class="modal-image-wrap"><img id="modalDishImage" src="" alt=""><span class="modal-image-label">A VELVET BREW FAVOURITE</span></div>
+    <div class="modal-content"><p class="eyebrow" id="modalDishCategory">FROM OUR MENU</p><h2 id="modalDishName">Dish name</h2><p id="modalDishDescription"></p><div class="rotation-control"><label for="rotationSlider">Rotate preview</label><input type="range" id="rotationSlider" min="-12" max="12" value="0"><span id="rotationValue">0°</span></div><div class="modal-buy-row"><strong id="modalDishPrice">₹0</strong><button class="button button-gold" id="modalAddButton">Add to bag <span>+</span></button></div><p class="preview-note">Preview rotation is a visual effect on the image, not a full 3D model.</p></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
